@@ -133,8 +133,8 @@ def create_output_entry(entry, header, subpage_url):
 
     artist, title = out_array[4].split(' - ', 1)
 
-    out_array[4] = artist
-    out_array.insert(4, title)
+    out_array[4] = artist.encode('latin-1').decode('utf-8')
+    out_array.insert(4, title.encode('latin-1').decode('utf-8'))
 
     x_value = out_array[8]
     x_number = re.search(r'\(x(\d+)\)', x_value)
